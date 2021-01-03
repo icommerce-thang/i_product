@@ -1,0 +1,18 @@
+management:
+  endpoint:
+    health:
+      enabled: false
+eureka:
+  client:
+    enabled: false
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  profiles:
+    active: test
+  jpa:
+    show-sql: true
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
