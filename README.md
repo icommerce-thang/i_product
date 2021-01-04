@@ -136,8 +136,8 @@ MIT
 [Cart Api]: <https://github.com/icommerce-thang/i_cart>
 [Product Api]: <https://github.com/icommerce-thang/i_product>
 [Common]: <https://github.com/icommerce-thang/i_common>
-[product sample file]: <https://github.com/icommerce-thang/i_common/asserts/data-product.sql>
-[postman file]: <https://github.com/icommerce-thang/i_common/asserts/icommerce.postman_collection.json>
+[product sample file]: <https://github.com/icommerce-thang/i_common/blob/main/asserts/data-product.sql>
+[postman file]: <https://github.com/icommerce-thang/i_common/blob/main/asserts/icommerce.postman_collection.json>
 
 
 
