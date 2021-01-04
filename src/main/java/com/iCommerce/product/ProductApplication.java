@@ -59,5 +59,4 @@ public class ProductApplication {
     public RestTemplate getRestTemplate() {
         return new RestTemplate();
     }
-
 }

@@ -43,7 +43,7 @@ public class ProductController extends AbstractController {
     public ResponseEntity<List<ProductDto>> finalAll(ProductSearchDto payload,
                                                      Principal principal) {
         log.debug("Enter findAll product by {}", principal);
-        logEvent(principal.getName(), UserAction.PRODUCT_LIST, payload.toString());
+        logEvent(principal, UserAction.PRODUCT_LIST, payload.toString());
 
         List<ProductDto> items = productService.findAll(payload)
                 .stream()
@@ -60,7 +60,7 @@ public class ProductController extends AbstractController {
     @GetMapping("/{id}")
     public ResponseEntity<ProductDto> findById(@PathVariable("id") int id, Principal principal) {
         log.debug("Enter findById product {}, by {}", id, principal);
-        logEvent(principal.getName(), UserAction.PRODUCT_DETAIL, "" + id);
+        logEvent(principal, UserAction.PRODUCT_DETAIL, "" + id);
 
         return productService.findById(id)
                 .map(product -> {
@@ -77,7 +77,7 @@ public class ProductController extends AbstractController {
     public ResponseEntity<?> updatePrice(@PathVariable("id") int id,
                                          @RequestBody ProductDto payload, Principal principal) {
         log.debug("updatePrice of {} by {} value {}", id, principal.getName(), payload);
-        logEvent(principal.getName(), UserAction.PRODUCT_UPDATE, "update " + payload.getId() + " to " + payload.getPrice());
+        logEvent(principal, UserAction.PRODUCT_UPDATE, "update " + payload.getId() + " to " + payload.getPrice());
 
         Product product = productService.findById(id)
                 .orElseThrow(() -> new NotFoundException("Product is not found with id: " + id));
